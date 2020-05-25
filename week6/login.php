@@ -20,8 +20,8 @@ if (isset($_POST["username"])) {
     $result = $connection->query($sql);
     if ($result->num_rows == 1) {
         while ($row = $result->fetch_assoc()) {
-            if ($row["password"] == $password) {
-                echo 'access';
+            if ($row["password"] == $pwd) {
+                echo 'access granted';
             } else {
                 echo 'wrong password';
             }
@@ -30,3 +30,4 @@ if (isset($_POST["username"])) {
         echo "wrong username";
     }
 }
+//https://htcs5606phplocngo.herokuapp.com/
