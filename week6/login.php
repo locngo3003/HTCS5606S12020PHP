@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST["username"])) {
     $username = $_POST["username"];
-    $password = $_POST["password"];
+    $password = $_POST["pwd"];
 
 
     $server = "kil9uzd3tgem3naa.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
@@ -20,7 +20,7 @@ if (isset($_POST["username"])) {
     $result = $connection->query($sql);
     if ($result->num_rows == 1) {
         while ($row = $result->fetch_assoc()) {
-            if ($row["password"] == $pwd) {
+            if ($row["password"] == $password) {
                 echo 'access granted';
             } else {
                 echo 'wrong password';
