@@ -13,10 +13,10 @@
         <th>Name</th>
     </tr>
     <?php
-    $server = "dno6xji1n8fm828n.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
-    $user = "frn8ql19w9jrd0hy";
-    $pwd = "uvsw3rnopxb2uxq2";
-    $database = "eq8apmg97080j54s";
+    $server = "kil9uzd3tgem3naa.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+    $user = "eihuxghz1d16wln9";
+    $pwd = "rm6ssod1ra1y6iho";
+    $database = "xuc77vapd06kjxop";
 
     $connection = new mysqli($server, $user, $pwd, $database); //create database connection
     if ($connection->connect_error){
