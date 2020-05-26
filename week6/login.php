@@ -34,7 +34,7 @@ if (isset($_POST["username"])){
                 // if login, we allow user to do something
                 ?>
                 <p><a href="profile.php">profile</a></p>
-                <p><a href="changepassword.php">change password</a></p>
+                <p><a href="changepasswordform.php">change password</a></p>
                 <?php
             }else{
                 echo "wrong password";
