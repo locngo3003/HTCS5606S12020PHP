@@ -10,6 +10,7 @@ if ($connection->connect_error){
 }else{
     echo "Connection Created";
 }
+
 $sql = "select password from Users where username ='something'";
 $result = $connection->query($sql);
 if ($result->num_rows ==1){
