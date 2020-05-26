@@ -21,7 +21,7 @@ if ($result->num_rows ==1){
 
 if (isset($_POST['oldpwd'])){ //issest check variable exist or not
    if ($_POST["oldpwd"] == $oldPwdInDb){
-       $sql = "update Users set password ''";
+       $sql = "update Users set password ";
        $sql .=$_POST["newpwd"];
        $sql .= "'where username ='something'";
        $result = $connection->query($sql);
