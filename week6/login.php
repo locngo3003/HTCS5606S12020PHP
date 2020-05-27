@@ -6,45 +6,47 @@
  * Purpose: for login
  */
 
-if (isset($_POST["username"])){
+if (isset($_POST["username"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-   include_once "dbconnection.php";
+    include_once "dbconnection.php";
 
     // is the username in my table
     $sql = "select * from Users where username = '$username'"; //this is our query
     $result = $connection->query($sql); //run query on this connection through method query()
-    if ($result->num_rows == 1){ // means user exist in our database
-        while ($row = $result->fetch_assoc()){
-            if ($row["password"] == $password){ //check password
+    if ($result->num_rows == 1) { // means user exist in our database
+        while ($row = $result->fetch_assoc()) {
+            if ($row["password"] == $password) { //check password
                 echo "access granted";
                 session_start();
-                $_SESSION["username"] =$username;
+                $_SESSION["username"] = $username;
                 // if login, we allow user to do something
 
-            }else{
+            } else {
                 echo "wrong password";
                 ?>
                 <script>
                     setTimeout(function () {
-                        window.open("loginform.php","_self"); // go to login form
-                    })
+                        window.open("loginform.php", "_self"); // go to login form
+                    },30000)
                 </script>
                 <?php
             }
         }
-    } else{
+    } else {
         echo "wrong username";
         ?>
         <script>
-            window.open("loginform.php","_self"); // go to login form
+            setTimeout(function () {
+                window.open("loginform.php", "_self"); // go to login form
+            },30000)
         </script>
         <?php
     }
     $connection->close(); //close my connection
 
-}else{
+} else {
 
 }
 ?>
