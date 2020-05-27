@@ -22,23 +22,29 @@ if (isset($_POST["username"])){
                 session_start();
                 $_SESSION["username"] =$username;
                 // if login, we allow user to do something
-                ?>
-                <p><a href="profile.php">profile</a></p>
-                <p><a href="changepasswordform.php">change password</a></p>
-                <?php
+
             }else{
                 echo "wrong password";
+                ?>
+                <script>
+                    setTimeout(function () {
+                        window.open("loginform.php","_self"); // go to login form
+                    })
+                </script>
+                <?php
             }
         }
     } else{
         echo "wrong username";
+        ?>
+        <script>
+            window.open("loginform.php","_self"); // go to login form
+        </script>
+        <?php
     }
     $connection->close(); //close my connection
 
 }else{
-    ?>
-    <script>
-        window.open("loginform.html","_self"); // go to login form
-    </script>
-    <?php
+
 }
+?>
